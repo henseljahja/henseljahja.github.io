@@ -1,13 +1,12 @@
-import React, { useRef, useEffect } from 'react';
+import { Layout } from '@components';
+import { srConfig } from '@config';
+import { usePrefersReducedMotion } from '@hooks';
+import sr from '@utils/sr';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
+import React, { useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
-import { srConfig } from '@config';
-import sr from '@utils/sr';
-import { Layout } from '@components';
-import { Icon } from '@components/icons';
-import { usePrefersReducedMotion } from '@hooks';
 
 const StyledTableContainer = styled.div`
   margin: 100px -20px;
@@ -172,10 +171,10 @@ const ArchivePage = ({ location, data }) => {
                 projects.map(({ node }, i) => {
                   const {
                     date,
-                    github,
-                    external,
-                    ios,
-                    android,
+                    // github,
+                    // external,
+                    // ios,
+                    // android,
                     title,
                     tech,
                     company,
@@ -189,19 +188,24 @@ const ArchivePage = ({ location, data }) => {
                       <td className="company hide-on-mobile">
                         {company ? <span>{company}</span> : <span>—</span>}
                       </td>
+                      {tech ? (
+                        <td className="tech hide-on-mobile">
+                          {tech.length > 0 &&
+                            tech.map((item, i) => (
+                              <span key={i}>
+                                {item}
+                                {''}
+                                {i !== tech.length - 1 && (
+                                  <span className="separator">&middot;</span>
+                                )}
+                              </span>
+                            ))}
+                        </td>
+                      ) : (
+                        ''
+                      )}
 
-                      <td className="tech hide-on-mobile">
-                        {tech.length > 0 &&
-                          tech.map((item, i) => (
-                            <span key={i}>
-                              {item}
-                              {''}
-                              {i !== tech.length - 1 && <span className="separator">&middot;</span>}
-                            </span>
-                          ))}
-                      </td>
-
-                      <td className="links">
+                      {/* <td className="links">
                         <div>
                           {external && (
                             <a href={external} aria-label="External Link">
@@ -224,7 +228,7 @@ const ArchivePage = ({ location, data }) => {
                             </a>
                           )}
                         </div>
-                      </td>
+                      </td> */}
                     </tr>
                   );
                 })}
