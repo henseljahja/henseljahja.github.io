@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
 import { useLocation } from '@reach/router';
-import { useStaticQuery, graphql } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
+import PropTypes from 'prop-types';
+import React from 'react';
+import { Helmet } from 'react-helmet';
 
 // https://www.gatsbyjs.com/docs/add-seo-component/
 
@@ -30,7 +30,7 @@ const Head = ({ title, description, image }) => {
     defaultDescription,
     siteUrl,
     defaultImage,
-    twitterUsername,
+    // twitterUsername,
   } = site.siteMetadata;
 
   const seo = {
@@ -43,7 +43,7 @@ const Head = ({ title, description, image }) => {
   return (
     <Helmet title={title} defaultTitle={seo.title} titleTemplate={`%s | ${defaultTitle}`}>
       <html lang="en" />
-
+      {/* 
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
 
@@ -59,7 +59,7 @@ const Head = ({ title, description, image }) => {
       <meta name="twitter:description" content={seo.description} />
       <meta name="twitter:image" content={seo.image} />
 
-      <meta name="google-site-verification" content="DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk" />
+      <meta name="google-site-verification" content="DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk" /> */}
     </Helmet>
   );
 };
