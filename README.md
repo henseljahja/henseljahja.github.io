@@ -18,7 +18,7 @@
     <img src="https://api.netlify.com/api/v1/badges/1963b488-7b78-48c9-9e2d-6fb5e47ab3af/deploy-status" alt="Netlify Status" />
   </a>
 </p>
-
+> This website is a fork, and heres the original README from Brittany Chiang, the original creator herself
 ![demo](https://raw.githubusercontent.com/bchiang7/v4/main/src/images/demo.png)
 
 ## 🚨 Forking this repo (please read!)
