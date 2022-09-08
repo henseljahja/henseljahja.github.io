@@ -4,7 +4,7 @@ title: 'Assistant Engineering Manager'
 company: 'Yokke'
 location: 'Jakarta, Indonesia'
 range: 'April 2022 - Present'
-# url: 'https://us.mullenlowe.com/'
+url: 'https://www.yokke.co.id/id'
 ---
 
 - Lead the development of Anti-Spoofing system to verify the user authentication in M-Bansos Apps.

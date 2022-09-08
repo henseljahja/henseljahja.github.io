@@ -4,7 +4,7 @@ title: 'Software Engineer'
 company: 'Yokke'
 location: 'Jakarta, Indonesia'
 range: 'October 2021 - March 2022'
-# url: 'https://us.mullenlowe.com/'
+url: 'https://www.yokke.co.id/id'
 ---
 
 - Develop, and design analytic dashboard system, for continuous monitoring of deployed chatbot models and customer

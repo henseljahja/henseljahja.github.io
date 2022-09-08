@@ -4,7 +4,7 @@ title: 'Software Engineer Intern'
 company: 'PT Mitra Transkasi'
 location: 'Jakarta, Indonesia'
 range: 'May 2021 - September 2021'
-# url: 'https://www.upstatement.com/'
+url: 'https://www.yokke.co.id/id'
 ---
 
 - Develop and design chatbot on customer dashboard, based on Transformer with Entity Extraction model, using Sanic Framework for Socket & API Request
