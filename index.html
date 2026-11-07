@@ -1,233 +1,1054 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hensel Donato Jahja - Professional Profile</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        margin: 0;
-        padding: 20px;
-        color: #333;
-        background-color: #f4f4f4;
-      }
-      .container {
-        max-width: 800px;
-        margin: 0 auto;
-        background-color: #fff;
-        padding: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-      h1,
-      h2,
-      h3 {
-        color: #333;
-      }
-      a {
-        color: #007bff;
-        text-decoration: none;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
-      .section {
-        margin-bottom: 20px;
-      }
-      .job-title {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
+<title>Hensel Jahja Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Payment, identity and back-office systems for Bank Mandiri's merchant ecosystem, my companies Straventa and Alsytec, and contract clients.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap">
+<style>
+/* Layout: Straventa marketing band, 1080px content column. Hero with a framed real capture,
+   a ledger-style project index, then case studies grouped by employer / company / client. */
+:root {
+  --paper: #F4F5F7; --paper-2: #ECEEF2; --surface: #FAFBFC; --surface-2: #F1F3F6; --card: #FFFFFF;
+  --ink: #15181E; --ink-2: #3B404A; --ink-3: #646973;
+  --hair: #E2E5EA; --hair-2: #EDEFF3;
+  --navy: #16294D; --navy-2: #0F1D38; --on-navy: #ECEAE1; --on-navy-mute: #93A4C0;
+  --signal: #3B4FE0; --signal-700: #2C3AAB; --signal-100: #E6E7FB;
+  --accent: #3B4FE0; --accent-hover: #2C3AAB; --on-accent: #FFFFFF;
+  --nav-bg: rgba(244,245,247,.82); --scrim: rgba(10,15,25,.42); --hair-on-navy: rgba(255,255,255,.18);
+  --shadow-1: 0 1px 2px rgba(21,24,30,.05); --shadow-2: 0 4px 12px -4px rgba(21,24,30,.12); --shadow-3: 0 18px 40px -24px rgba(21,24,30,.30);
+  --ease: cubic-bezier(.2,.7,.2,1); --dur-1: 120ms; --dur-2: 200ms; --dur-3: 320ms;
+  --z-sticky: 50; --z-modal: 1300;
+  --r-sm: 8px; --r-md: 12px; --r-lg: 18px; --r-xl: 24px; --pill: 999px;
+  --serif: Newsreader, Georgia, 'Times New Roman', serif;
+  --sans: 'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+  --icon-stroke: 1.6;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0F1622; --paper-2: #0B111B; --surface: #161E2C; --surface-2: #1C2535; --card: #1C2535;
+    --ink: #ECEAE1; --ink-2: #B7BCC7; --ink-3: #8A92A1;
+    --hair: #2A3343; --hair-2: #212A39;
+    --navy: #13233F; --navy-2: #0A1428; --on-navy: #ECEAE1; --on-navy-mute: #8696B2;
+    --signal: #8C97FF; --signal-700: #A8B0FF; --signal-100: #222A52;
+    --accent: #4A5BE6; --accent-hover: #5463E8; --on-accent: #FFFFFF;
+    --nav-bg: rgba(15,22,34,.82);
+    --shadow-1: 0 1px 2px rgba(0,0,0,.4); --shadow-2: 0 6px 16px -6px rgba(0,0,0,.55); --shadow-3: 0 18px 40px -24px rgba(0,0,0,.7);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0F1622; --paper-2: #0B111B; --surface: #161E2C; --surface-2: #1C2535; --card: #1C2535;
+  --ink: #ECEAE1; --ink-2: #B7BCC7; --ink-3: #8A92A1;
+  --hair: #2A3343; --hair-2: #212A39;
+  --navy: #13233F; --navy-2: #0A1428; --on-navy: #ECEAE1; --on-navy-mute: #8696B2;
+  --signal: #8C97FF; --signal-700: #A8B0FF; --signal-100: #222A52;
+  --accent: #4A5BE6; --accent-hover: #5463E8; --on-accent: #FFFFFF;
+  --nav-bg: rgba(15,22,34,.82);
+  --shadow-1: 0 1px 2px rgba(0,0,0,.4); --shadow-2: 0 6px 16px -6px rgba(0,0,0,.55); --shadow-3: 0 18px 40px -24px rgba(0,0,0,.7);
+  color-scheme: dark;
+}
 
-      .role {
-        flex: 1;
-      }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+body {
+  background: var(--paper); color: var(--ink);
+  font: 400 16px/1.6 var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: var(--nav-bg); }
+a { color: var(--signal); text-underline-offset: 3px; }
+a:hover { color: var(--signal-700); }
+:focus-visible { outline: 2px solid transparent; box-shadow: 0 0 0 1px var(--signal), 0 0 0 4px var(--signal-100); border-radius: var(--r-sm); }
+.wrap { max-width: 1080px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.ico { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: var(--icon-stroke); stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.label { font: 500 12px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+h1, h2, h3 { font-family: var(--serif); font-weight: 500; text-wrap: balance; margin: 0; letter-spacing: -.01em; }
+h2 { font-size: clamp(28px, 4vw, 38px); line-height: 1.15; }
+h3 { font-size: 24px; line-height: 1.25; }
+p { margin: 0; }
 
-      .company {
-        flex: 0;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <h1>Hensel Donato Jahja</h1>
-      <p>
-        <a href="mailto:henseljahja@gmail.com">henseljahja@gmail.com</a> |
-        +6285156209625 | <a href="https://henseljahja.github.io">Website</a> |
-        <a href="https://linkedin.com/in/henseljahja">LinkedIn</a>
-      </p>
+/* nav */
+.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: var(--z-sticky); background: var(--nav-bg); backdrop-filter: saturate(1.4) blur(10px); -webkit-backdrop-filter: saturate(1.4) blur(10px); border-bottom: 1px solid var(--hair); }
+.nav .wrap { display: flex; align-items: center; gap: 24px; min-height: 60px; }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-weight: 600; }
+.brand:hover { color: var(--ink); }
+.nav ul { display: flex; gap: 4px; list-style: none; margin: 0 0 0 auto; padding: 0; }
+.nav ul a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; color: var(--ink-2); text-decoration: none; font-size: 14.5px; border-radius: var(--pill); transition: color var(--dur-1) var(--ease), background var(--dur-1) var(--ease); }
+.nav ul a:hover { color: var(--ink); background: var(--surface-2); }
+@media (max-width: 720px) { .nav ul li:not(.keep) { display: none; } }
 
-      <div class="section">
-        <h2>Professional Summary</h2>
-        <p>
-          Fullstack Engineer with expertise in designing and implementing
-          complex systems. Proficient in team leadership, solution architecture,
-          and cross-functional collaboration to deliver high-quality products.
-        </p>
-      </div>
+/* buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 0 20px; border-radius: var(--pill); font: 500 15px/1 var(--sans); text-decoration: none; cursor: pointer; border: 1px solid transparent; transition: background var(--dur-1) var(--ease), border-color var(--dur-1) var(--ease), color var(--dur-1) var(--ease); }
+.btn-accent { background: var(--accent); color: var(--on-accent); }
+.btn-accent:hover { background: var(--accent-hover); color: var(--on-accent); }
+.btn-outline { background: transparent; color: var(--ink); border-color: var(--hair); }
+.btn-outline:hover { border-color: var(--ink-3); color: var(--ink); }
+.btn-on-navy { background: var(--on-navy); color: var(--navy); }
+.btn-on-navy:hover { background: var(--card); color: var(--navy); }
+.btn-ghost-navy { background: transparent; color: var(--on-navy); border-color: var(--hair-on-navy); }
+.btn-ghost-navy:hover { color: var(--on-navy); border-color: var(--on-navy-mute); }
 
-      <div class="section">
-        <h2>Work Experience</h2>
-        <div>
-          <h3 class="job-title">
-            <span class="role"
-              >Assistant Engineering Manager @
-              <a href="https://www.yokke.co.id/id" class="company"
-                >Yokke</a
-              ></span
-            >
-            Jakarta, October 2021 - Present
-          </h3>
+/* hero */
+.hero { padding-block: 64px 48px; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 48px; align-items: center; }
+.hero h1 { font-size: clamp(40px, 6vw, 64px); line-height: 1.05; margin-block: 12px 20px; }
+.hero .lede { font-size: 18px; color: var(--ink-2); max-width: 34em; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.trust { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 20px 0 0; padding: 0; list-style: none; color: var(--ink-2); font-size: 15px; }
+.trust li { display: inline-flex; align-items: center; gap: 6px; }
+.trust .ico { color: var(--signal); width: 16px; height: 16px; }
+.stage { position: relative; padding-bottom: 28px; padding-right: 36px; }
+.stage .phone { position: absolute; right: 0; bottom: 0; width: 26%; }
+@media (max-width: 880px) { .hero .wrap { grid-template-columns: minmax(0, 1fr); } .hero { padding-block: 40px 32px; } }
 
-          <ul>
-            <li>Developed Merchant Dashboard for transaction analysis</li>
-            <li>
-              Implemented Internet Payment Gateway and managed CI/CD and
-              Kubernetes cluster
-            </li>
-            <li>
-              Applied Clean Architecture & Domain Driven Design with Spring Boot
-            </li>
-            <li>Led development of Anti-Spoofing system for M-Bansos Apps</li>
-            <li>
-              Created internal verification system using OCR for merchant
-              onboarding
-            </li>
-            <li>Assessed vendor Proof of Concepts for system integration</li>
-            <li>
-              Coordinated with cross-functional teams to align product
-              requirements
-            </li>
-            <li>Developed analytic dashboard for chatbot model monitoring</li>
-            <li>Integrated data pipelines for chatbot model training</li>
-          </ul>
-          <p>
-            <strong>Technologies:</strong> ReactJS, Spring Boot, FastAPI,
-            PostgreSQL, OracleSQL, Tesseract, TensorFlow, OpenCV, Nginx,
-            AliCloud, Kubernetes
-          </p>
+/* frames for real captures */
+.frame { margin: 0; background: var(--card); border: 1px solid var(--hair); border-radius: var(--r-lg); box-shadow: var(--shadow-3); overflow: hidden; }
+.frame .bar { display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 14px; border-bottom: 1px solid var(--hair-2); background: var(--surface); color: var(--ink-3); font: 400 12px/1 var(--mono); min-width: 0; }
+.frame .bar span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.frame .bar .ico { width: 13px; height: 13px; }
+.frame img { display: block; width: 100%; height: auto; }
+.shot { all: unset; display: block; cursor: zoom-in; border-radius: 0 0 var(--r-lg) var(--r-lg); }
+.shot:focus-visible { box-shadow: inset 0 0 0 3px var(--signal); }
+.phone { margin: 0; background: var(--ink); border-radius: 20px; padding: 6px; box-shadow: var(--shadow-3); }
+.phone img { display: block; width: 100%; height: auto; border-radius: 14px; }
+.phone .shot { border-radius: 14px; }
+
+/* facts band */
+.facts { border-block: 1px solid var(--hair); background: var(--surface); }
+.facts .wrap { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.fact { padding: 24px 24px 24px 0; display: grid; gap: 4px; }
+.fact + .fact { padding-left: 24px; border-left: 1px solid var(--hair); }
+.fact b { font: 500 34px/1.1 var(--sans); font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
+.fact span { color: var(--ink-2); font-size: 15px; }
+@media (max-width: 760px) {
+  .facts .wrap { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fact:nth-child(3) { padding-left: 0; border-left: 0; }
+  .fact:nth-child(n+3) { border-top: 1px solid var(--hair); }
+}
+
+/* sections */
+section.block { padding-block: 72px; }
+section.block + section.block { border-top: 1px solid var(--hair); }
+.head { display: grid; gap: 10px; margin-bottom: 36px; max-width: 46em; }
+.head p { color: var(--ink-2); font-size: 17px; }
+
+/* index table */
+.seg { display: inline-flex; flex-wrap: wrap; gap: 4px; padding: 4px; background: var(--surface-2); border-radius: var(--pill); margin-bottom: 16px; }
+.seg button { all: unset; box-sizing: border-box; min-height: 40px; padding: 0 16px; display: inline-flex; align-items: center; gap: 6px; border-radius: var(--pill); font: 500 14px/1 var(--sans); color: var(--ink-2); cursor: pointer; transition: background var(--dur-1) var(--ease), color var(--dur-1) var(--ease); }
+.seg button:focus-visible, .shot:focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; }
+.seg button:hover { color: var(--ink); }
+.seg button[aria-pressed="true"] { background: var(--card); color: var(--ink); box-shadow: var(--shadow-1); }
+.seg .n { font: 400 12px/1 var(--mono); color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.table-card { background: var(--card); border: 1px solid var(--hair); border-radius: var(--r-lg); box-shadow: var(--shadow-1); overflow: hidden; }
+.scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; min-width: 760px; font-size: 15px; }
+thead th { position: sticky; top: 0; background: var(--surface); text-align: left; font: 500 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); padding: 14px 16px; border-bottom: 1px solid var(--hair); white-space: nowrap; }
+tbody td { padding: 10px 16px; border-bottom: 1px solid var(--hair-2); height: 48px; vertical-align: middle; color: var(--ink-2); }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:hover td { background: var(--surface); }
+td.proj a { color: var(--ink); font-weight: 600; text-decoration: underline; text-decoration-color: var(--hair); text-underline-offset: 3px; }
+td.proj a:hover { color: var(--signal); text-decoration: underline; }
+td.yr { font-variant-numeric: tabular-nums; white-space: nowrap; }
+td .muted { color: var(--ink-3); }
+.tag { display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border: 1px solid var(--hair); border-radius: var(--pill); font: 400 12px/1 var(--mono); color: var(--ink-2); white-space: nowrap; background: var(--surface); }
+.tbl-foot { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 12px 16px; border-top: 1px solid var(--hair); background: var(--surface); color: var(--ink-3); font: 400 12.5px/1.4 var(--mono); }
+
+/* case studies */
+.org { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 16px; margin-bottom: 8px; }
+.cases { display: grid; gap: 64px; }
+.case { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 40px; align-items: start; }
+.case.flip .copy { order: 2; }
+.case .copy { display: grid; gap: 14px; min-width: 0; }
+.case .copy > p { color: var(--ink-2); }
+.meta { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 16px; margin: 4px 0 0; padding: 16px 0 0; border-top: 1px solid var(--hair); font-size: 15px; }
+.meta dt { font: 500 12px/1.9 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+.meta dd { margin: 0; color: var(--ink-2); min-width: 0; }
+.links { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 15px; }
+.links a { display: inline-flex; align-items: center; gap: 6px; min-height: 32px; }
+.links .ico { width: 15px; height: 15px; }
+.visual { display: grid; gap: 16px; min-width: 0; }
+.strip { display: grid; grid-template-columns: repeat(auto-fill, minmax(112px, 1fr)); gap: 14px; }
+.strip.wide { grid-template-columns: repeat(auto-fill, minmax(124px, 1fr)); }
+.duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.duo .frame .bar { height: 30px; font-size: 12px; }
+.strip figure { margin: 0; display: grid; gap: 8px; }
+.strip figcaption { text-align: center; font: 400 12px/1.3 var(--mono); color: var(--ink-3); text-transform: uppercase; letter-spacing: .06em; }
+.note { font-size: 14px; color: var(--ink-3); }
+@media (max-width: 880px) { .case { grid-template-columns: minmax(0, 1fr); gap: 24px; } .case.flip .copy { order: 0; } }
+
+/* systems without a public screen */
+.sys-head { margin: 72px 0 20px; display: grid; gap: 6px; }
+.sys { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.sys article { background: var(--surface-2); border-radius: var(--r-lg); padding: 24px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.sys h4 { margin: 0; font: 600 16.5px/1.35 var(--sans); }
+.sys p { color: var(--ink-2); font-size: 14.5px; }
+.sys .stack { font: 400 12px/1.6 var(--mono); color: var(--ink-3); }
+@media (max-width: 880px) { .sys { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .sys { grid-template-columns: minmax(0, 1fr); } }
+
+/* stack */
+.stack-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.stack-grid article { background: var(--card); border: 1px solid var(--hair); border-radius: var(--r-lg); padding: 24px; box-shadow: var(--shadow-1); display: grid; gap: 12px; align-content: start; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+@media (max-width: 640px) { .stack-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* paper */
+.paper { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 20px; align-items: start; background: var(--surface-2); border-radius: var(--r-lg); padding: 24px; }
+.paper .ico { width: 28px; height: 28px; color: var(--signal); }
+.paper h4 { margin: 0 0 6px; font: 600 17px/1.35 var(--sans); }
+.paper p { color: var(--ink-2); font-size: 15px; }
+
+/* closing band */
+.close { background: linear-gradient(160deg, var(--navy), var(--navy-2)); color: var(--on-navy); }
+.close .wrap { padding-block: 72px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 32px; align-items: center; }
+.close h2 { color: var(--on-navy); }
+.close p { color: var(--on-navy-mute); margin-top: 10px; }
+.close .addr { font: 400 14px/1.4 var(--mono); color: var(--on-navy); user-select: all; margin-top: 16px; }
+.close .cta { margin-top: 0; }
+@media (max-width: 760px) { .close .wrap { grid-template-columns: minmax(0, 1fr); } }
+footer { padding-block: 24px; color: var(--ink-3); font-size: 14px; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+
+/* lightbox */
+dialog { border: 0; padding: 0; background: transparent; max-width: min(1200px, 94vw); max-height: 92vh; overflow: visible; }
+dialog::backdrop { background: var(--scrim); backdrop-filter: blur(2px); }
+dialog[open] { animation: pop var(--dur-3) var(--ease); }
+.lb { position: relative; background: var(--card); border-radius: var(--r-xl); box-shadow: var(--shadow-3); padding: 12px; display: grid; gap: 10px; }
+.lb img { display: block; max-width: 100%; max-height: calc(92vh - 80px); width: auto; height: auto; margin: 0 auto; border-radius: var(--r-md); }
+.lb p { font: 400 12.5px/1.4 var(--mono); color: var(--ink-3); padding: 0 8px 4px; }
+.lb .x { position: absolute; top: -14px; right: -14px; width: 44px; height: 44px; border-radius: var(--pill); border: 1px solid var(--hair); background: var(--card); color: var(--ink); display: grid; place-items: center; cursor: pointer; box-shadow: var(--shadow-2); }
+@keyframes pop { from { opacity: 0; transform: translateY(6px) scale(.985); } }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.strengths .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 28px; }
+.strengths .card { background: var(--card); border: 1px solid var(--hair); border-radius: var(--r-lg); box-shadow: var(--shadow-1); padding: 24px; display: grid; gap: 10px; align-content: start; }
+.strengths .card h3 { font-family: "Newsreader", Georgia, serif; font-weight: 500; font-size: 24px; line-height: 1.2; margin: 0; }
+.strengths .card ul { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 8px; color: var(--ink-2); font-size: 15px; }
+.strengths .card li { display: grid; grid-template-columns: 16px minmax(0, 1fr); gap: 8px; align-items: start; }
+.strengths .card .ico { color: var(--signal); width: 16px; height: 16px; margin-top: 3px; }
+.strengths .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 28px; background: var(--navy); color: var(--on-navy); border-radius: var(--r-lg); }
+.strengths .stat { padding: 20px 24px; display: grid; gap: 4px; }
+.strengths .stat + .stat { border-left: 1px solid color-mix(in srgb, var(--on-navy) 20%, transparent); }
+.strengths .stat b { font: 500 30px/1.1 var(--sans); font-variant-numeric: tabular-nums; }
+.strengths .stat span { color: var(--on-navy-mute); font-size: 14px; }
+@media (max-width: 880px) { .strengths .cards { grid-template-columns: minmax(0, 1fr); } .strengths .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } .strengths .stat:nth-child(3) { border-left: 0; } }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } html { scroll-behavior: auto; } }
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-ext" viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+  <symbol id="i-gh" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></symbol>
+  <symbol id="mark" viewBox="-130 -130 260 260"><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"><rect x="0" y="-112" width="26" height="92" rx="13"/><rect x="0" y="-112" width="26" height="92" rx="13" transform="rotate(60)"/><rect x="0" y="-112" width="26" height="92" rx="13" transform="rotate(120)"/><rect x="0" y="-112" width="26" height="92" rx="13" transform="rotate(180)"/><rect x="0" y="-112" width="26" height="92" rx="13" transform="rotate(240)"/><rect x="0" y="-112" width="26" height="92" rx="13" transform="rotate(300)"/></g></symbol>
+</svg>
+
+<nav class="nav" aria-label="Sections">
+  <div class="wrap">
+    <a class="brand" href="#top">Hensel Jahja</a>
+    <ul>
+      <li><a href="#strengths">Architecture</a></li>
+      <li class="keep"><a href="#index">Projects</a></li>
+      <li><a href="#yokke">Bank Mandiri</a></li>
+      <li><a href="#straventa">Straventa</a></li>
+      <li><a href="#alsytec">Alsytec</a></li>
+      <li><a href="#contract">Contract</a></li>
+      <li><a href="#research">Research</a></li>
+      <li class="keep"><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="top">
+  <header class="hero">
+    <div class="wrap">
+      <div>
+        <p class="label">Payment gateway SME · Engineering manager</p>
+        <h1>Payment systems, from the merchant counter to the bank.</h1>
+        <p class="lede">I lead the Enterprise Data Management engineering team at a Bank Mandiri subsidiary that runs the group’s merchant acquiring. I also founded two companies: Straventa, a financial-infrastructure platform I build alone, and Alsytec (PT Alpha Sistem Teknologi), a QRIS cashier app for small shops. I take contract work on the side.</p>
+        <div class="cta">
+          <button class="btn btn-accent" type="button" data-copy="henseljahja@gmail.com" id="copy-hero">
+            <svg class="ico" aria-hidden="true"><use href="#i-copy"/></svg><span>Copy email</span>
+          </button>
+          <a class="btn btn-outline" href="#index">See all projects</a>
         </div>
-        <div>
-          <h3 class="job-title">
-            <span class="role"
-              >Founder @
-              <a href="https://alsytec.com" class="company">Alsytec</a></span
-            >
-            Jakarta, November 2023 - Present
-          </h3>
-
-          <ul>
-            <li>
-              Oversee development of infrastructure from databases to
-              deployments
-            </li>
-            <li>
-              Developed
-              <a
-                href="https://play.google.com/store/apps/details?id=id.pos.onebiz.dev&hl=en"
-                >Alsytec POS Application</a
-              >
-              for various merchants
-            </li>
-            <li>
-              Created
-              <a href="https://dashboard.alsytec.com">Merchant POS Dashboard</a>
-              for business insights
-            </li>
-            <li>
-              Developed <a href="https://alsytec.com">Alsytec</a> company
-              website
-            </li>
-            <li>
-              Led development of Alsytec Customer Application for loyalty and
-              retention
-            </li>
-          </ul>
-          <p>
-            <strong>Technologies:</strong> NextJS, SpringBoot, Go, PostgreSQL,
-            AWS
-          </p>
-        </div>
-        <div>
-          <h3 class="job-title">
-            <span class="role">Independent Consultant</span>
-            Jakarta, May 2021 - Present
-          </h3>
-          <ul>
-            <li>
-              Consulted for multinational companies, providing infrastructure
-              and application solutions
-            </li>
-            <li>
-              Handled projects ranging from internal infrastructure to
-              post-services applications
-            </li>
-            <li>
-              Served clients in Healthcare, Financial Services across Indonesia,
-              Singapore, USA, and Australia
-            </li>
-          </ul>
-          <p>
-            <strong>Technologies:</strong> NextJS, .NET Core, Flutter, React
-            Native, Spring Boot, Go, PostgreSQL, AWS, Azure, GCP
-          </p>
-        </div>
+        <ul class="trust">
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Four Bank Mandiri ecosystem sites in production</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Three apps on the stores</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Two companies founded</li>
+        </ul>
       </div>
-
-      <div class="section">
-        <h2>Education</h2>
-        <h3 class="job-title">
-          Bachelor of Science in Computer Science, Brawijaya University | August
-          2018 - December 2021 | GPA: 3.56
-        </h3>
-        <p>
-          <strong>Relevant Coursework:</strong> Software Engineering, NLP,
-          Neural Networks, Statistical Inference, Text Mining, Data Engineering,
-          Big Data Analytics
-        </p>
-      </div>
-
-      <div class="section">
-        <h2>Major Projects</h2>
-        <h3><a href="https://dashboard.yokke.co.id">Dashboard Yokke</a></h3>
-        <p>
-          Dashboard for merchants to view transaction summaries and analyses
-        </p>
-        <h3><a href="#">Yokke Payment Gateway</a></h3>
-        <p>Payment gateway used by M-Pertamina, Online Pajak</p>
-        <h3>
-          <a
-            href="https://play.google.com/store/apps/details?id=com.ezyhr.ezyhr_mobile_apps&hl=en"
-            >EZYHRM Mobile Apps</a
-          >
-        </h3>
-        <p>HR Management app for attendance, payroll, and recruitment</p>
-        <h3><a href="https://alsytec.com/">Alsytec Company Website</a></h3>
-        <p>Website showcasing Alsytec’s products and services</p>
-        <h3>
-          <a href="https://dashboard.alsytec.com/"
-            >Alsytec Merchant Dashboard</a
-          >
-        </h3>
-        <p>Dashboard for merchants to analyze their business performance</p>
-        <h3>
-          <a
-            href="https://play.google.com/store/apps/details?id=id.pos.onebiz.dev&hl=en"
-            >Alsytec POS</a
-          >
-        </h3>
-        <p>
-          POS application used by hundreds of merchants across various sectors.
-        </p>
-        <h3>Digital Identity Verification</h3>
-        <p>
-          KTP-based digital identity verification for SSO, and Personal
-          Informations, used by multiple companies in Healthcare and Financial
-          Services
-        </p>
+      <div class="stage">
+        <figure class="frame">
+          <div class="bar"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg><span>qris.bankmandiri.co.id</span></div>
+          <button class="shot" type="button" data-full="shots/qris-mandiri.webp" data-cap="Livin' Usaha QRIS · qris.bankmandiri.co.id"><img src="shots/qris-mandiri.webp" alt="Livin' Usaha QRIS merchant portal for Bank Mandiri" width="1280" height="978" fetchpriority="high"></button>
+        </figure>
+        <figure class="phone">
+          <button class="shot" type="button" data-full="shots/sos-home.webp" data-cap="BeyondTech SOS · home"><img src="shots/sos-home.webp" alt="SOS super-app home screen" width="203" height="360"></button>
+        </figure>
       </div>
     </div>
-  </body>
-</html>
+  </header>
+
+  <div class="facts" aria-label="At a glance">
+    <div class="wrap">
+      <div class="fact"><b>2021</b><span>Joined a Bank Mandiri subsidiary as an intern; engineering manager since Oct 2023</span></div>
+      <div class="fact"><b>~1.900</b><span>Commits across 25 company repositories</span></div>
+      <div class="fact"><b>27</b><span>Projects in the index below</span></div>
+      <div class="fact"><b>4</b><span>Areas: Bank Mandiri subsidiary, Straventa, Alsytec, contract</span></div>
+    </div>
+  </div>
+
+  <!-- STRENGTHS -->
+  <section class="block strengths" id="strengths" aria-labelledby="strengths-h">
+    <div class="wrap">
+      <div class="head">
+        <p class="label">Solutions architecture · security · scale</p>
+        <h2 id="strengths-h">I design payment systems that stay secure and stay up</h2>
+        <p>I design the architecture for every system I lead, from the first diagram to the production runbook.</p>
+      </div>
+      <div class="stats" aria-label="Payment gateway results">
+        <div class="stat"><b>99,99%</b><span>Payment gateway uptime</span></div>
+        <div class="stat"><b>&lt; 10 s</b><span>Failover between data centres</span></div>
+        <div class="stat"><b>2 sites</b><span>Active-active, both taking traffic</span></div>
+        <div class="stat"><b>~3.000</b><span>Card transactions a day</span></div>
+      </div>
+      <div class="cards">
+        <div class="card"><p class="label">Solutions architecture</p><h3>I design what I lead</h3><ul><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span>Took over a vendor-built card gateway and redesigned it for two data centres</span></li><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span>Payops: 15 modules that run hosted or on the customer’s own servers</span></li><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span>One OpenID Connect sign-in across Straventa products</span></li><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span>Bank links built to SNAP, Bank Indonesia’s open API standard</span></li></ul></div>
+        <div class="card"><p class="label">Security and compliance</p><h3>Built to pass audits</h3><ul><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span>Led the PCI DSS compliance work on the payment gateway</span></li><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span>Payment gateway certified to ISO 27001, ISO 22301, ISO 20000-1, ISO 9001 and ISO 27701</span></li><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span>Card keys handled on a hardware security module (HSM)</span></li><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span>Closed the 2026 penetration-test findings on Livin’ Usaha QRIS</span></li><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span>Risk-based two-factor sign-in and a second approver on money changes</span></li></ul></div>
+        <div class="card"><p class="label">Scalability and resilience</p><h3>No single point of failure</h3><ul><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span>Active-active data centre and disaster recovery centre, Feb – Jul 2025</span></li><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span>PostgreSQL HA and Redis Sentinel fail over on their own</span></li><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span>Kubernetes in both sites, released through in-house GitLab CI and Harbor</span></li><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span>Fraud detection cut from 12 hours to under 30 minutes</span></li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDEX -->
+  <section class="block" id="index" aria-labelledby="index-h">
+    <div class="wrap">
+      <div class="head">
+        <p class="label">Project index</p>
+        <h2 id="index-h">Everything in one ledger</h2>
+        <p>Every project, who it was for and what I did on it. Select a name to jump to its write-up.</p>
+      </div>
+      <div class="seg" role="group" aria-label="Filter projects by area">
+        <button type="button" aria-pressed="true" data-f="all">All <span class="n" data-count="all"></span></button>
+        <button type="button" aria-pressed="false" data-f="yokke">Bank Mandiri subsidiary · employer <span class="n" data-count="yokke"></span></button>
+        <button type="button" aria-pressed="false" data-f="straventa">Straventa <span class="n" data-count="straventa"></span></button>
+        <button type="button" aria-pressed="false" data-f="alsytec">Alsytec <span class="n" data-count="alsytec"></span></button>
+        <button type="button" aria-pressed="false" data-f="contract">Contract <span class="n" data-count="contract"></span></button>
+        <button type="button" aria-pressed="false" data-f="research">Research <span class="n" data-count="research"></span></button>
+      </div>
+      <div class="table-card">
+        <div class="scroll" tabindex="0" aria-label="Project table, scrolls sideways on small screens">
+          <table>
+            <thead><tr><th scope="col">Project</th><th scope="col">For</th><th scope="col">My role</th><th scope="col">Years</th><th scope="col">Where to see it</th></tr></thead>
+            <tbody id="rows">
+              <tr data-a="yokke"><td class="proj"><a href="#p-qris">Livin' Usaha QRIS onboarding</a></td><td>Bank Mandiri</td><td>Led frontend, co-built backend</td><td class="yr">2026 – now</td><td><span class="tag">qris.bankmandiri.co.id</span></td></tr>
+              <tr data-a="yokke"><td class="proj"><a href="#p-yokke">Partner monitoring dashboard</a></td><td>Group partners</td><td>Full-stack</td><td class="yr">2021 – 2026</td><td><span class="tag">Live sign-in</span></td></tr>
+              <tr data-a="yokke"><td class="proj"><a href="#p-bolm">Back Office Livin’ Merchant Revenue Sharing (BOLM)</a></td><td>Livin' Merchant</td><td>Full-stack</td><td class="yr">2025 – 2026</td><td><span class="tag">Internal</span></td></tr>
+              <tr data-a="yokke"><td class="proj"><a href="#p-bolk">Back Office Livin’ Cashier Loyalty (BOLK)</a></td><td>Livin' Merchant</td><td>Full-stack</td><td class="yr">2025 – 2026</td><td><span class="tag">Internal</span></td></tr>
+              <tr data-a="yokke"><td class="proj"><a href="#p-fds">Fraud detection system</a></td><td>Bank Mandiri subsidiary</td><td>Sole engineer</td><td class="yr">2024 – 2025</td><td><span class="tag">Internal</span></td></tr>
+              <tr data-a="yokke"><td class="proj"><a href="#p-ecr">Electronic cash register (ECR) host-to-host</a></td><td>Alfamart</td><td>Backend</td><td class="yr">2025 – now</td><td><span class="tag">Internal</span></td></tr>
+              <tr data-a="yokke"><td class="proj"><a href="#p-ipg">Internet payment gateway</a></td><td>M-Pertamina, Online Pajak</td><td>Took over, led DC/DRC and PCI DSS</td><td class="yr">2024 – now</td><td><span class="tag">Live sign-in</span></td></tr>
+              <tr data-a="yokke"><td class="proj"><a href="#p-yob">Partner portal (YOB)</a></td><td>Bank Mandiri subsidiary</td><td>Full-stack</td><td class="yr">2026</td><td><span class="tag">Live sign-in</span></td></tr>
+              <tr data-a="yokke"><td class="proj"><a href="#p-bot">Conversational AI platform</a></td><td>Bank Mandiri subsidiary</td><td>Engineer</td><td class="yr">2021 – 2024</td><td><span class="tag">Internal</span></td></tr>
+              <tr data-a="yokke"><td class="proj"><a href="#p-inc">Incident dashboard</a></td><td>Bank Mandiri subsidiary</td><td>Built it</td><td class="yr">2026</td><td><span class="tag">Internal</span></td></tr>
+              <tr data-a="straventa"><td class="proj"><a href="#p-payops">Payops platform</a></td><td>Straventa</td><td>Founder, solo</td><td class="yr">2026 – now</td><td><span class="tag">straventa.com/platform</span></td></tr>
+              <tr data-a="straventa"><td class="proj"><a href="#p-iam">Straventa Accounts (single sign-on)</a></td><td>Straventa</td><td>Founder, solo</td><td class="yr">2026 – now</td><td><span class="tag">accounts.straventa.com</span></td></tr>
+              <tr data-a="straventa"><td class="proj"><a href="#p-interlude">Interlude construction management</a></td><td>Straventa</td><td>Founder, solo</td><td class="yr">2026</td><td><span class="tag">interlude.straventa.com</span></td></tr>
+              <tr data-a="straventa"><td class="proj"><a href="#p-ops">Ops platform and Helpdesk</a></td><td>Straventa</td><td>Founder, solo</td><td class="yr">2026 – now</td><td><span class="tag">Internal</span></td></tr>
+              <tr data-a="straventa"><td class="proj"><a href="#p-ocr">Document OCR</a></td><td>Straventa</td><td>Founder, solo</td><td class="yr">2026 – now</td><td><span class="tag">straventa.com/ocr</span></td></tr>
+              <tr data-a="straventa"><td class="proj"><a href="#p-gitops">GitOps platform</a></td><td>Straventa</td><td>Founder, solo</td><td class="yr">2026 – now</td><td><span class="tag">Internal</span></td></tr>
+              <tr data-a="straventa"><td class="proj"><a href="#p-505pay">505pay payments stack</a></td><td>505pay, via Straventa</td><td>Built it</td><td class="yr">2026</td><td><span class="tag">505pay.link</span></td></tr>
+              <tr data-a="straventa"><td class="proj"><a href="#p-cashup">Cashup Reconcile</a></td><td>Cashlez, via Straventa</td><td>Built it</td><td class="yr">2026</td><td><span class="tag">Internal</span></td></tr>
+              <tr data-a="straventa"><td class="proj"><a href="#p-nafisa">Nafisa voice agent</a></td><td>Client, via Straventa</td><td>Built it</td><td class="yr">2026</td><td><span class="tag">Internal</span></td></tr>
+              <tr data-a="straventa"><td class="proj"><a href="#p-sites">Marketing sites</a></td><td>Straventa</td><td>Founder, solo</td><td class="yr">2026 – now</td><td><span class="tag">straventa.com</span></td></tr>
+              <tr data-a="alsytec"><td class="proj"><a href="#p-alsytec">Alsytec QRIS cashier app</a></td><td>PT Alpha Sistem Teknologi</td><td>Founder</td><td class="yr">2024 – now</td><td><span class="tag">alsytec.com</span></td></tr>
+              <tr data-a="contract"><td class="proj"><a href="#p-sos">SOS super-app</a></td><td>BeyondTech</td><td>Flutter lead</td><td class="yr">2026</td><td><span class="tag">beyondtech.co.id</span></td></tr>
+              <tr data-a="contract"><td class="proj"><a href="#p-sosfe">SOS operator console</a></td><td>BeyondTech</td><td>Frontend</td><td class="yr">2026</td><td><span class="tag">Internal</span></td></tr>
+              <tr data-a="contract"><td class="proj"><a href="#p-ezy">EzyHRM and mobile app</a></td><td>EzyHRM</td><td>Full-stack</td><td class="yr">2025</td><td><span class="tag">App Store · Play</span></td></tr>
+              <tr data-a="contract"><td class="proj"><a href="#p-conv">Conveyorku</a></td><td>Client</td><td>Built it</td><td class="yr">2026</td><td><span class="tag">Internal</span></td></tr>
+              <tr data-a="contract"><td class="proj"><a href="#p-jucita">Jucita Florist site</a></td><td>Client</td><td>Built it</td><td class="yr">2026</td><td><span class="tag">Internal</span></td></tr>
+              <tr data-a="research"><td class="proj"><a href="#p-paper">Mask-usage recognition with ViT</a></td><td>Universitas Brawijaya</td><td>Author</td><td class="yr">2022</td><td><span class="tag">arXiv:2203.11542</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tbl-foot"><span id="range" aria-live="polite"></span><span>Internal = runs inside a client or employer network</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- YOKKE -->
+  <section class="block" id="yokke" aria-labelledby="yokke-h">
+    <div class="wrap">
+      <div class="head">
+        <div class="org"><p class="label">Employer · May 2021 – now</p></div>
+        <h2 id="yokke-h">Bank Mandiri ecosystem, at a subsidiary</h2>
+        <p>My employer, a Bank Mandiri subsidiary, runs merchant acquiring for the group: card terminals (EDC), QRIS, card gateways and the back offices behind them. I joined as an intern in May 2021 and have been Engineering Manager, Enterprise Data Management, since October 2023, leading a team of 10 across backend, frontend, mobile and data.</p>
+      </div>
+
+      <div class="cases">
+        <article class="case" id="p-qris">
+          <div class="copy">
+            <p class="label">Bank Mandiri · production</p>
+            <h3>Livin' Usaha QRIS onboarding</h3>
+            <p>The QRIS merchant portal and onboarding pipeline behind Bank Mandiri's Livin' Usaha. I led the development and built it alone, full stack, including risk-based two-factor sign-in with trusted devices, and closed the findings from the 2026 penetration test.</p>
+            <dl class="meta">
+              <dt>Role</dt><dd>Lead developer, full stack, solo</dd>
+              <dt>Years</dt><dd>Mar 2026 – now</dd>
+              <dt>Stack</dt><dd>React, Webpack 5 · Spring Boot 3.4, JDK 21, Oracle, Redis, RabbitMQ · Alibaba Cloud ACK</dd>
+            </dl>
+            <div class="links"><a href="https://qris.bankmandiri.co.id" target="_blank" rel="noopener">qris.bankmandiri.co.id <svg class="ico" aria-hidden="true"><use href="#i-ext"/></svg></a></div>
+          </div>
+          <div class="visual">
+            <figure class="frame">
+              <div class="bar"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg><span>qris.bankmandiri.co.id</span></div>
+              <button class="shot" type="button" data-full="shots/qris-mandiri.webp" data-cap="Livin' Usaha QRIS · qris.bankmandiri.co.id"><img src="shots/qris-mandiri.webp" alt="Livin' Usaha QRIS portal" width="1280" height="978" loading="lazy"></button>
+            </figure>
+          </div>
+        </article>
+
+        <article class="case flip" id="p-yokke">
+          <div class="copy">
+            <p class="label">Group partners · production</p>
+            <h3>Partner monitoring dashboard</h3>
+            <p>Merchant and transaction monitoring for companies that partner with the group. I've worked on it from my first year to now, across both the React frontend and the Spring backend, with Kafka feeding transactions into Oracle.</p>
+            <dl class="meta">
+              <dt>Role</dt><dd>Full-stack engineer</dd>
+              <dt>Years</dt><dd>2021 – 2026</dd>
+              <dt>Stack</dt><dd>React · Spring Cloud · Kafka, Oracle</dd>
+            </dl>
+            <div class="links"><a href="https://dashboard.yokke.co.id" target="_blank" rel="noopener">Live partner dashboard <svg class="ico" aria-hidden="true"><use href="#i-ext"/></svg></a></div>
+          </div>
+          <div class="visual">
+            <figure class="frame">
+              <div class="bar"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg><span>Partner dashboard sign-in</span></div>
+              <button class="shot" type="button" data-full="shots/yokke-dashboard.webp" data-cap="Partner monitoring dashboard · live sign-in"><img src="shots/yokke-dashboard.webp" alt="Partner monitoring dashboard sign-in" width="1280" height="978" loading="lazy"></button>
+            </figure>
+          </div>
+        </article>
+
+        <article class="case" id="p-bolm">
+          <div class="copy">
+            <p class="label">Livin' Merchant · internal</p>
+            <h3>Back Office Livin’ Merchant Revenue Sharing (BOLM)</h3>
+            <p>Revenue sharing across merchants and tenants, with maker-checker approval on every financial change and integration into the bank's core systems.</p>
+            <dl class="meta">
+              <dt>Role</dt><dd>Full-stack engineer</dd>
+              <dt>Years</dt><dd>2025 – 2026</dd>
+              <dt>Stack</dt><dd>Next.js 15, MUI · Java 21, Spring Boot 3.4 · Kubernetes</dd>
+            </dl>
+          </div>
+          <div class="visual">
+            <figure class="frame">
+              <div class="bar"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg><span>BOLM · internal</span></div>
+              <button class="shot" type="button" data-full="shots/bolm-login.webp" data-cap="BOLM back office · sign-in"><img src="shots/bolm-login.webp" alt="BOLM back office sign-in" width="1280" height="978" loading="lazy"></button>
+            </figure>
+          </div>
+        </article>
+
+        <article class="case flip" id="p-bolk">
+          <div class="copy">
+            <p class="label">Livin' Merchant · live since Sep 2025</p>
+            <h3>Back Office Livin’ Cashier Loyalty (BOLK)</h3>
+            <p>EDC cashiers earn Livin' Points on the transactions they process. A worker service builds settlement files every hour, and the back office gives operators the data grids and charts to run the program.</p>
+            <dl class="meta">
+              <dt>Role</dt><dd>Full-stack engineer</dd>
+              <dt>Years</dt><dd>Jul 2025 – Feb 2026</dd>
+              <dt>Stack</dt><dd>Next.js 15, MUI v7, MUI X · Spring Boot · Redis Sentinel</dd>
+            </dl>
+          </div>
+          <div class="visual">
+            <figure class="frame">
+              <div class="bar"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg><span>BOLK · internal</span></div>
+              <button class="shot" type="button" data-full="shots/bolk-login.webp" data-cap="BOLK loyalty back office · sign-in"><img src="shots/bolk-login.webp" alt="BOLK loyalty back office sign-in" width="1280" height="978" loading="lazy"></button>
+            </figure>
+            <p class="note">Internal bank systems are shown at sign-in only. Their data isn't mine to share.</p>
+          </div>
+        </article>
+
+        <article class="case" id="p-yob">
+          <div class="copy">
+            <p class="label">Group partners · production</p>
+            <h3>Partner portal (YOB), the back office</h3>
+            <p>The partner portal handles for merchant and EDC terminal onboarding, with the EDC and transaction-history services behind it. Partners use it around the clock to follow their performance.</p>
+            <dl class="meta">
+              <dt>Role</dt><dd>Full-stack engineer</dd>
+              <dt>Years</dt><dd>May – Oct 2026</dd>
+              <dt>Stack</dt><dd>Vue 3 · Java</dd>
+            </dl>
+            <div class="links"><a href="https://business.yokke.co.id" target="_blank" rel="noopener">Live partner portal <svg class="ico" aria-hidden="true"><use href="#i-ext"/></svg></a></div>
+          </div>
+          <div class="visual">
+            <figure class="frame">
+              <div class="bar"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg><span>Partner portal sign-in</span></div>
+              <button class="shot" type="button" data-full="shots/yob-login.webp" data-cap="Partner portal (YOB) · live sign-in"><img src="shots/yob-login.webp" alt="Partner portal (YOB) sign-in" width="1280" height="800" loading="lazy"></button>
+            </figure>
+          </div>
+        </article>
+
+        <article class="case flip" id="p-ipg">
+          <div class="copy">
+            <p class="label">PCI DSS · ISO 27001 · 22301 · 20000-1 · 9001 · 27701 · production</p>
+            <h3>Internet payment gateway</h3>
+            <p>A Bank Mandiri subsidiary's card payment gateway and its merchant portal. I took over the vendor-built gateway in 2024 and now run it in-house. Merchants on it include M-Pertamina and Online Pajak. I led the active-active data centre and disaster recovery (DC/DRC) program (Feb – Jul 2025) and the PCI DSS compliance work, moved CI/CD and images in-house and added hardware security module (HSM) key jobs.</p>
+            <dl class="meta">
+              <dt>Role</dt><dd>Took over, led DC/DRC and PCI DSS</dd>
+              <dt>Years</dt><dd>2024 – now</dd>
+              <dt>Result</dt><dd>99,99% uptime · failover under 10 s · ~3.000 transactions a day</dd>
+              <dt>Stack</dt><dd>Spring Boot · Kubernetes · PostgreSQL HA · Redis Sentinel · GitLab · Harbor · HSM</dd>
+            </dl>
+            <div class="links"><a href="https://epg.yokke.co.id:8443/auth/signin" target="_blank" rel="noopener">Live merchant portal <svg class="ico" aria-hidden="true"><use href="#i-ext"/></svg></a></div>
+          </div>
+          <div class="visual">
+            <figure class="frame">
+              <div class="bar"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg><span>Merchant portal sign-in</span></div>
+              <button class="shot" type="button" data-full="shots/epg-login.webp" data-cap="Payment gateway merchant portal · live sign-in"><img src="shots/epg-login.webp" alt="Payment gateway merchant portal sign-in" width="1280" height="800" loading="lazy"></button>
+            </figure>
+          </div>
+        </article>
+      </div>
+
+      <div class="sys-head">
+        <p class="label">Systems without a public screen</p>
+        <h3>Backend and platform work</h3>
+      </div>
+      <div class="sys">
+        <article id="p-fds">
+          <p class="label">Sep 2024 – Jun 2025</p>
+          <h4>Fraud detection system</h4>
+          <p>Sole engineer on the in-house fraud engine: 62 risk rules across card and QRIS transactions, plus case management for the risk team. Cut detection time from 12 hours to under 30 minutes.</p>
+          <p class="stack">Java · Spring Boot</p>
+        </article>
+        <article id="p-ecr">
+          <p class="label">2025 – now · v1.0.18</p>
+          <h4>Electronic cash register (ECR) host-to-host for Alfamart</h4>
+          <p>Payment API between Alfamart's point-of-sale registers and EDC card terminals, built to SNAP, Bank Indonesia’s open-API standard.</p>
+          <p class="stack">Java 21 · Spring Boot 3.4 · Kafka · Oracle · Redis · RabbitMQ</p>
+        </article>
+        <article id="p-bot">
+          <p class="label">2021 – 2024</p>
+          <h4>Conversational AI platform</h4>
+          <p>Customer chatbot with an operations dashboard, user management and a web crawler for its knowledge base. Hexagonal, domain-driven backend.</p>
+          <p class="stack">React · FastAPI · Python · Selenium</p>
+        </article>
+        <article id="p-inc">
+          <p class="label">Oct 2026</p>
+          <h4>Incident dashboard</h4>
+          <p>ITIL incident-management reporting on top of a mirror of the company's Redmine database.</p>
+          <p class="stack">Spring Boot · Vue · Oracle</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRAVENTA -->
+  <section class="block" id="straventa" aria-labelledby="str-h">
+    <div class="wrap">
+      <div class="head">
+        <div class="org"><svg width="28" height="28" aria-hidden="true" style="color:var(--ink)"><use href="#mark"/></svg><p class="label">Founder · solo · 2026 – now</p></div>
+        <h2 id="str-h">Straventa</h2>
+        <p>My own company, built and run by me alone. Straventa makes financial infrastructure for Indonesian payment companies: the Payops platform as the flagship, plus back-office, identity, document and construction products. I also deliver client systems through it.</p>
+      </div>
+
+      <div class="cases">
+        <article class="case" id="p-payops">
+          <div class="copy">
+            <p class="label">Flagship · 51 tagged releases</p>
+            <h3>Payops platform</h3>
+            <p>A 15-module payments and compliance platform that ships as SaaS or on a customer's own Kubernetes, with OpenAPI SDKs for integrators.</p>
+            <dl class="meta">
+              <dt>Available</dt><dd>Customer and business identity checks (KYC, KYB) · Point of sale · Marketplace · Payment gateway · Fraud detection · Anti-money-laundering (AML) monitoring · Reconciliation</dd>
+              <dt>Coming soon</dt><dd>Recurring billing · Issuing · Card vault · Open banking · Lending and buy now, pay later · Ledger and wallet · Disputes · Disbursement</dd>
+              <dt>Role</dt><dd>Founder, architect, sole engineer</dd>
+              <dt>Stack</dt><dd>Go 1.26, sqlc · PostgreSQL 16 · Next.js · OpenAPI SDKs</dd>
+            </dl>
+            <div class="links">
+              <a href="https://straventa.com/platform" target="_blank" rel="noopener">straventa.com/platform <svg class="ico" aria-hidden="true"><use href="#i-ext"/></svg></a>
+              <a href="https://docs.straventa.com" target="_blank" rel="noopener">docs.straventa.com <svg class="ico" aria-hidden="true"><use href="#i-ext"/></svg></a>
+            </div>
+          </div>
+          <div class="visual">
+            <figure class="frame">
+              <div class="bar"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg><span>straventa.com</span></div>
+              <button class="shot" type="button" data-full="shots/straventa.webp" data-cap="Straventa · straventa.com"><img src="shots/straventa.webp" alt="Straventa website" width="1280" height="800" loading="lazy"></button>
+            </figure>
+            <figure class="frame">
+              <div class="bar"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg><span>straventa.com · product lines</span></div>
+              <button class="shot" type="button" data-full="shots/straventa-products.webp" data-cap="Straventa · product lines"><img src="shots/straventa-products.webp" alt="Straventa product lines page" width="1280" height="1404" loading="lazy"></button>
+            </figure>
+            <div class="duo">
+              <figure class="frame">
+                <div class="bar"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg><span>docs.straventa.com</span></div>
+                <button class="shot" type="button" data-full="shots/payops-docs.webp" data-cap="Payops developer docs · docs.straventa.com"><img src="shots/payops-docs.webp" alt="Payops developer docs" width="1280" height="800" loading="lazy"></button>
+              </figure>
+              <figure class="frame">
+                <div class="bar"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg><span>marketplace.straventa.com</span></div>
+                <button class="shot" type="button" data-full="shots/payops-storefront.webp" data-cap="Payops marketplace storefront, demo shop · marketplace.straventa.com"><img src="shots/payops-storefront.webp" alt="Marketplace storefront with a demo coffee shop" width="1280" height="800" loading="lazy"></button>
+              </figure>
+            </div>
+          </div>
+        </article>
+
+        <article class="case flip" id="p-iam">
+          <div class="copy">
+            <p class="label">Identity · production</p>
+            <h3>Straventa Accounts</h3>
+            <p>A self-hostable, multi-tenant OpenID Connect provider: single sign-on, passkeys, step-up two-factor, organisation admin and a portal for wiring up a customer's own single sign-on. Every Straventa console signs in through it, and so do client consoles such as the SOS operator console and Cashup Reconcile.</p>
+            <dl class="meta">
+              <dt>Role</dt><dd>Founder, sole engineer</dd>
+              <dt>Stack</dt><dd>Go (chi, sqlc) · Next.js · PostgreSQL</dd>
+            </dl>
+            <div class="links">
+              <a href="https://accounts.straventa.com" target="_blank" rel="noopener">accounts.straventa.com <svg class="ico" aria-hidden="true"><use href="#i-ext"/></svg></a>
+              <a href="https://straventa.com/sso" target="_blank" rel="noopener">straventa.com/sso <svg class="ico" aria-hidden="true"><use href="#i-ext"/></svg></a>
+            </div>
+          </div>
+          <div class="visual">
+            <figure class="frame">
+              <div class="bar"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg><span>straventa.com/sso</span></div>
+              <button class="shot" type="button" data-full="shots/accounts-product.webp" data-cap="Straventa Accounts · product page"><img src="shots/accounts-product.webp" alt="Straventa Accounts product page: self-hosted single sign-on for Indonesian enterprises" width="1280" height="800" loading="lazy"></button>
+            </figure>
+            <figure class="frame">
+              <div class="bar"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg><span>accounts.straventa.com</span></div>
+              <button class="shot" type="button" data-full="shots/accounts-landing.webp" data-cap="Straventa Accounts · accounts.straventa.com"><img src="shots/accounts-landing.webp" alt="Straventa Accounts home with account, organisation admin and connection portal" width="1280" height="935" loading="lazy"></button>
+            </figure>
+          </div>
+        </article>
+
+        <article class="case" id="p-surfaces">
+          <div class="copy">
+            <p class="label">Live today</p>
+            <h3>Everything running under straventa.com</h3>
+            <p>Each Straventa product has its own public host. The apps sit behind Straventa Accounts, so their public face is the shared sign-in.</p>
+            <dl class="meta">
+              <dt>Sites</dt><dd>straventa.com · docs.straventa.com · design.straventa.com</dd>
+              <dt>Apps</dt><dd>pos.straventa.com · checkout.straventa.com · marketplace.straventa.com · dashboard.straventa.com · interlude.straventa.com</dd>
+              <dt>Tools</dt><dd>straventa.com/ocr</dd>
+              <dt>Hosted, not built</dt><dd>plane.straventa.com (Plane project management)</dd>
+            </dl>
+            <div class="links">
+              <a href="https://design.straventa.com" target="_blank" rel="noopener">design.straventa.com <svg class="ico" aria-hidden="true"><use href="#i-ext"/></svg></a>
+              <a href="https://pos.straventa.com" target="_blank" rel="noopener">pos.straventa.com <svg class="ico" aria-hidden="true"><use href="#i-ext"/></svg></a>
+            </div>
+          </div>
+          <div class="visual">
+            <figure class="frame">
+              <div class="bar"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg><span>design.straventa.com</span></div>
+              <button class="shot" type="button" data-full="shots/design-system.webp" data-cap="Straventa design system · design.straventa.com"><img src="shots/design-system.webp" alt="Straventa design system home: Every rail, into one core" width="1280" height="800" loading="lazy"></button>
+            </figure>
+            <div class="duo">
+              <figure class="frame">
+              <div class="bar"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg><span>pos.straventa.com</span></div>
+              <button class="shot" type="button" data-full="shots/pos-signin.webp" data-cap="Payops POS · pos.straventa.com, sign-in through Straventa Accounts"><img src="shots/pos-signin.webp" alt="Payops POS sign-in page through Straventa Accounts" width="1280" height="800" loading="lazy"></button>
+            </figure>
+              <figure class="frame">
+              <div class="bar"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg><span>straventa.com/ocr</span></div>
+              <button class="shot" type="button" data-full="shots/ocr.webp" data-cap="Document OCR · straventa.com/ocr"><img src="shots/ocr.webp" alt="Straventa document OCR extractor page" width="1280" height="800" loading="lazy"></button>
+            </figure>
+            </div>
+          </div>
+        </article>
+
+        <article class="case flip" id="p-interlude">
+          <div class="copy">
+            <p class="label">Construction management · 2026</p>
+            <h3>Interlude</h3>
+            <p>Straventa's construction product, from bid to handover: projects, activities, Gantt charts and field reports. A Flutter app for the site, a web console for the office and a Go backend.</p>
+            <dl class="meta">
+              <dt>Role</dt><dd>Founder, sole engineer</dd>
+              <dt>Stack</dt><dd>Flutter · Go · PostgreSQL</dd>
+            </dl>
+            <div class="links">
+              <a href="https://interlude.straventa.com" target="_blank" rel="noopener">interlude.straventa.com <svg class="ico" aria-hidden="true"><use href="#i-ext"/></svg></a>
+              <a href="https://play.google.com/store/apps/details?id=com.straventa.interlude" target="_blank" rel="noopener">Google Play <svg class="ico" aria-hidden="true"><use href="#i-ext"/></svg></a>
+            </div>
+          </div>
+          <div class="visual">
+            <figure class="frame">
+                <div class="bar"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg><span>interlude.straventa.com</span></div>
+                <button class="shot" type="button" data-full="shots/interlude-web.webp" data-cap="Interlude web console · interlude.straventa.com"><img src="shots/interlude-web.webp" alt="Interlude web console sign-in" width="1280" height="800" loading="lazy"></button>
+              </figure>
+            <div class="strip wide">
+              <figure><div class="phone"><button class="shot" type="button" data-full="shots/interlude-launch.webp" data-cap="Interlude · launch"><img src="shots/interlude-launch.webp" alt="Interlude launch screen" width="203" height="360" loading="lazy"></button></div><figcaption>Launch</figcaption></figure>
+              <figure><div class="phone"><button class="shot" type="button" data-full="shots/interlude-signin.webp" data-cap="Interlude · sign in"><img src="shots/interlude-signin.webp" alt="Interlude sign in" width="203" height="360" loading="lazy"></button></div><figcaption>Sign in</figcaption></figure>
+              <figure><div class="phone"><button class="shot" type="button" data-full="shots/interlude-error.webp" data-cap="Interlude · form validation"><img src="shots/interlude-error.webp" alt="Interlude form validation" width="203" height="360" loading="lazy"></button></div><figcaption>Validation</figcaption></figure>
+            </div>
+          </div>
+        </article>
+
+        <article class="case" id="p-cashup">
+          <div class="copy">
+            <p class="label">Client delivery · Cashlez · 2026</p>
+            <h3>Cashup Reconcile</h3>
+            <p>Payment reconciliation for Cashlez, delivered through Straventa. It ingests acquirer settlement files, matches them against the ledger and surfaces the breaks for the finance team. Runs in staging, UAT and production on Helm and k3s.</p>
+            <dl class="meta">
+              <dt>Role</dt><dd>Built it</dd>
+              <dt>Stack</dt><dd>Vite, React · API · Helm, k3s</dd>
+            </dl>
+          </div>
+          <div class="visual">
+            <figure class="frame">
+              <div class="bar"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg><span>Cashup Reconcile · internal</span></div>
+              <button class="shot" type="button" data-full="shots/cashup-login.webp" data-cap="Cashup Reconcile · sign-in"><img src="shots/cashup-login.webp" alt="Cashup Reconcile sign-in" width="1200" height="766" loading="lazy"></button>
+            </figure>
+          </div>
+        </article>
+
+        <article class="case flip" id="p-505pay">
+          <div class="copy">
+            <p class="label">Client delivery · 505pay · 2026</p>
+            <h3>505pay</h3>
+            <p>The payments stack for 505pay, a client, delivered through Straventa and built on Payops: the 505pay site, an offline-first point of sale, the operator console, developer docs with a sandbox, and 505pay's own branded sign-in.</p>
+            <dl class="meta">
+              <dt>Hosts</dt><dd>505pay.link · pay.505pay.link · pos.505pay.link · docs.505pay.link · accounts.505pay.link</dd>
+              <dt>Role</dt><dd>Built it</dd>
+              <dt>Stack</dt><dd>Payops (Go, PostgreSQL) · Next.js · Straventa Accounts</dd>
+            </dl>
+            <div class="links">
+              <a href="https://505pay.link" target="_blank" rel="noopener">505pay.link <svg class="ico" aria-hidden="true"><use href="#i-ext"/></svg></a>
+              <a href="https://docs.505pay.link" target="_blank" rel="noopener">docs.505pay.link <svg class="ico" aria-hidden="true"><use href="#i-ext"/></svg></a>
+            </div>
+          </div>
+          <div class="visual">
+            <figure class="frame">
+              <div class="bar"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg><span>505pay.link</span></div>
+              <button class="shot" type="button" data-full="shots/505pay-site.webp" data-cap="505pay · 505pay.link"><img src="shots/505pay-site.webp" alt="505pay website: Sell at the counter, surface in the dashboard" width="1280" height="800" loading="lazy"></button>
+            </figure>
+            <div class="duo">
+              <figure class="frame">
+              <div class="bar"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg><span>docs.505pay.link</span></div>
+              <button class="shot" type="button" data-full="shots/505pay-docs.webp" data-cap="505pay developer docs · docs.505pay.link"><img src="shots/505pay-docs.webp" alt="505pay developer docs quickstart" width="1280" height="800" loading="lazy"></button>
+            </figure>
+              <figure class="frame">
+              <div class="bar"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg><span>accounts.505pay.link</span></div>
+              <button class="shot" type="button" data-full="shots/505pay-signin.webp" data-cap="505pay sign-in · accounts.505pay.link"><img src="shots/505pay-signin.webp" alt="505pay branded sign-in page" width="1280" height="800" loading="lazy"></button>
+            </figure>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="sys-head">
+        <p class="label">No public screen yet</p>
+        <h3>Products, infrastructure and client builds</h3>
+      </div>
+      <div class="sys">
+        <article id="p-ops">
+          <p class="label">Available · 405 commits</p>
+          <h4>Ops platform and Helpdesk</h4>
+          <p>One configurable engine for back-office work: typed records, state machines, roles and automations. Helpdesk is the first app on it, with inbound email and service-level timers (SLAs).</p>
+          <p class="stack">Go · chi · sqlc · PostgreSQL</p>
+        </article>
+        <article id="p-ocr">
+          <p class="label">Available</p>
+          <h4>Document OCR</h4>
+          <p>Reads Indonesian paperwork (KTP, KK, NPWP, NIB, tax invoices, bank statements) and returns typed fields, synchronously or as a job with webhooks.</p>
+          <p class="stack"><a href="https://straventa.com/ocr" target="_blank" rel="noopener">Try the extractor</a></p>
+        </article>
+        <article id="p-gitops">
+          <p class="label">~1.085 commits</p>
+          <h4>GitOps platform</h4>
+          <p>k3s clusters on Hetzner, Netcup and DigitalOcean, provisioned with Terraform and Ansible and deployed through Argo CD. Secrets in Vault, images in Harbor, Prometheus monitoring, Cloudflare at the edge.</p>
+          <p class="stack">k3s · Terraform · Ansible · Argo CD · Vault · Harbor</p>
+        </article>
+        <article id="p-nafisa">
+          <p class="label">Client delivery · Oct 2026</p>
+          <h4>Nafisa voice agent</h4>
+          <p>A voice agent that can also operate the phone, built on speech-to-text and an LLM tool loop.</p>
+          <p class="stack">Flutter · FastAPI · Gladia STT · LLM tools</p>
+        </article>
+        <article id="p-sites">
+          <p class="label">2 sites</p>
+          <h4>Marketing sites</h4>
+          <p>Straventa and Sierra Digital, both built on the Straventa design system, which is published at <a href="https://design.straventa.com" target="_blank" rel="noopener">design.straventa.com</a>.</p>
+          <p class="stack">Next.js 16 · Tailwind</p>
+        </article>
+        <article>
+          <p class="label">On the product list, not built by me</p>
+          <h4>Project management, digital signing</h4>
+          <p>Project management is a hosted Plane instance. Digital signing is listed as coming soon.</p>
+          <p class="stack">Plane (hosted)</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALSYTEC -->
+  <section class="block" id="alsytec" aria-labelledby="als-h">
+    <div class="wrap">
+      <div class="head">
+        <div class="org"><p class="label">Founder · PT Alpha Sistem Teknologi · 2024 – now</p></div>
+        <h2 id="als-h">Alsytec</h2>
+        <p>A separate company I founded, selling a QRIS cashier app to small shops. It is live, with paying merchants.</p>
+      </div>
+      <div class="cases">
+        <article class="case" id="p-alsytec">
+          <div class="copy">
+            <p class="label">Live · paying merchants</p>
+            <h3>Alsytec QRIS cashier app</h3>
+            <p>Shops accept QRIS payments, log every sale and see their cash flow in one app. It adds a transaction calculator that takes voice or typed input, profit and loss tracking, customer debt tracking with reminders, and automatic business-tax calculation.</p>
+            <dl class="meta">
+              <dt>Pricing</dt><dd>Rp 5.000 a day · Rp 150.000 a month · Rp 1.500.000 a year</dd>
+              <dt>Payments</dt><dd>Midtrans</dd>
+              <dt>Role</dt><dd>Founder</dd>
+              <dt>Stack</dt><dd>Flutter · Java</dd>
+            </dl>
+            <div class="links"><a href="https://alsytec.com" target="_blank" rel="noopener">alsytec.com <svg class="ico" aria-hidden="true"><use href="#i-ext"/></svg></a></div>
+          </div>
+          <div class="visual">
+            <figure class="frame">
+              <div class="bar"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg><span>alsytec.com</span></div>
+              <button class="shot" type="button" data-full="shots/alsytec.webp" data-cap="Alsytec · alsytec.com"><img src="shots/alsytec.webp" alt="Alsytec website" width="1280" height="800" loading="lazy"></button>
+            </figure>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTRACT -->
+  <section class="block" id="contract" aria-labelledby="cl-h">
+    <div class="wrap">
+      <div class="head">
+        <p class="label">Contractor</p>
+        <h2 id="cl-h">Contract work</h2>
+        <p>Products I built for other companies as a contractor: consumer fintech, HR and smaller web builds. Two of them are on the app stores.</p>
+      </div>
+
+      <div class="cases">
+        <article class="case" id="p-sos">
+          <div class="copy">
+            <p class="label">BeyondTech · live 2026</p>
+            <h3>SOS super-app</h3>
+            <p>A consumer fintech app for cross-border transfers, bill payments, mobile top-up, e-money and insurance, with tiered KYC. I led the Flutter build, including anti-root and anti-tamper hardening and document OCR with liveness checks through Verihubs.</p>
+            <dl class="meta">
+              <dt>Role</dt><dd>Flutter lead (contract)</dd>
+              <dt>Stack</dt><dd>Flutter, Dart · Go</dd>
+            </dl>
+            <div class="links"><a href="https://beyondtech.co.id" target="_blank" rel="noopener">beyondtech.co.id <svg class="ico" aria-hidden="true"><use href="#i-ext"/></svg></a></div>
+          </div>
+          <div class="visual">
+            <figure class="frame">
+              <div class="bar"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg><span>beyondtech.co.id</span></div>
+              <button class="shot" type="button" data-full="shots/beyondtech.webp" data-cap="BeyondTech · beyondtech.co.id"><img src="shots/beyondtech.webp" alt="BeyondTech website" width="1280" height="800" loading="lazy"></button>
+            </figure>
+            <div class="strip">
+              <figure><div class="phone"><button class="shot" type="button" data-full="shots/sos-home.webp" data-cap="SOS · home"><img src="shots/sos-home.webp" alt="SOS home" width="203" height="360" loading="lazy"></button></div><figcaption>Home</figcaption></figure>
+              <figure><div class="phone"><button class="shot" type="button" data-full="shots/sos-transfer.webp" data-cap="SOS · transfer"><img src="shots/sos-transfer.webp" alt="SOS transfer" width="203" height="360" loading="lazy"></button></div><figcaption>Transfer</figcaption></figure>
+              <figure><div class="phone"><button class="shot" type="button" data-full="shots/sos-ppob-grid.webp" data-cap="SOS · bill payments"><img src="shots/sos-ppob-grid.webp" alt="SOS bill payments" width="203" height="360" loading="lazy"></button></div><figcaption>Bills</figcaption></figure>
+              <figure><div class="phone"><button class="shot" type="button" data-full="shots/sos-insurance.webp" data-cap="SOS · insurance"><img src="shots/sos-insurance.webp" alt="SOS insurance" width="203" height="360" loading="lazy"></button></div><figcaption>Insurance</figcaption></figure>
+              <figure><div class="phone"><button class="shot" type="button" data-full="shots/sos-security.webp" data-cap="SOS · rooted-device block"><img src="shots/sos-security.webp" alt="SOS rooted device warning" width="203" height="360" loading="lazy"></button></div><figcaption>Anti-root</figcaption></figure>
+            </div>
+          </div>
+        </article>
+
+        <article class="case flip" id="p-sosfe">
+          <div class="copy">
+            <p class="label">BeyondTech · 2026 · internal</p>
+            <h3>SOS operator console</h3>
+            <p>The back office for the SOS app: merchant operations, finance, card system and e-wallet operations. Signs in through Straventa Accounts.</p>
+            <dl class="meta">
+              <dt>Role</dt><dd>Frontend (contract)</dd>
+              <dt>Stack</dt><dd>Next.js 16, React 19 · Radix · TanStack Query · Tailwind</dd>
+            </dl>
+          </div>
+          <div class="visual">
+            <figure class="frame">
+              <div class="bar"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg><span>SOS console · internal</span></div>
+              <button class="shot" type="button" data-full="shots/sos-fe-login.webp" data-cap="SOS operator console · sign-in"><img src="shots/sos-fe-login.webp" alt="SOS operator console sign-in" width="1280" height="800" loading="lazy"></button>
+            </figure>
+          </div>
+        </article>
+
+        <article class="case" id="p-ezy">
+          <div class="copy">
+            <p class="label">EzyHRM · 2025 · iOS and Android</p>
+            <h3>EzyHRM and its mobile app</h3>
+            <p>An HR system for Indonesian small businesses: payroll, attendance, leave, reimbursement and BPJS. The mobile app covers employee self-service and a manager approval view.</p>
+            <dl class="meta">
+              <dt>Role</dt><dd>Full-stack engineer (contract)</dd>
+              <dt>Stack</dt><dd>Laravel · Vue 3, Pinia · mobile app</dd>
+            </dl>
+            <div class="links">
+              <a href="https://ezyhrm.com" target="_blank" rel="noopener">ezyhrm.com <svg class="ico" aria-hidden="true"><use href="#i-ext"/></svg></a>
+              <a href="https://apps.apple.com/id/app/ezyhrm/id6739418492" target="_blank" rel="noopener">App Store <svg class="ico" aria-hidden="true"><use href="#i-ext"/></svg></a>
+              <a href="https://play.google.com/store/apps/details?id=com.ezyhr.ezyhr_mobile_apps" target="_blank" rel="noopener">Google Play <svg class="ico" aria-hidden="true"><use href="#i-ext"/></svg></a>
+            </div>
+          </div>
+          <div class="visual">
+            <figure class="frame">
+              <div class="bar"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg><span>ezyhrm.com</span></div>
+              <button class="shot" type="button" data-full="shots/ezyhrm.webp" data-cap="EzyHRM · ezyhrm.com"><img src="shots/ezyhrm.webp" alt="EzyHRM website" width="1280" height="800" loading="lazy"></button>
+            </figure>
+            <div class="strip">
+              <figure><div class="phone"><button class="shot" type="button" data-full="shots/ezyhrm-ios-1.webp" data-cap="EzyHRM · OTP sign-in"><img src="shots/ezyhrm-ios-1.webp" alt="EzyHRM OTP sign-in" width="166" height="360" loading="lazy"></button></div><figcaption>Sign in</figcaption></figure>
+              <figure><div class="phone"><button class="shot" type="button" data-full="shots/ezyhrm-play-1.webp" data-cap="EzyHRM · home"><img src="shots/ezyhrm-play-1.webp" alt="EzyHRM home" width="171" height="360" loading="lazy"></button></div><figcaption>Home</figcaption></figure>
+              <figure><div class="phone"><button class="shot" type="button" data-full="shots/ezyhrm-ios-2.webp" data-cap="EzyHRM · manager view"><img src="shots/ezyhrm-ios-2.webp" alt="EzyHRM manager dashboard" width="166" height="360" loading="lazy"></button></div><figcaption>Manager</figcaption></figure>
+              <figure><div class="phone"><button class="shot" type="button" data-full="shots/ezyhrm-play-3.webp" data-cap="EzyHRM · reimbursement"><img src="shots/ezyhrm-play-3.webp" alt="EzyHRM reimbursement" width="171" height="360" loading="lazy"></button></div><figcaption>Claims</figcaption></figure>
+              <figure><div class="phone"><button class="shot" type="button" data-full="shots/ezyhrm-play-4.webp" data-cap="EzyHRM · attendance"><img src="shots/ezyhrm-play-4.webp" alt="EzyHRM attendance list" width="171" height="360" loading="lazy"></button></div><figcaption>Attendance</figcaption></figure>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="sys-head">
+        <p class="label">Smaller builds</p>
+        <h3>Also delivered</h3>
+      </div>
+      <div class="sys">
+        <article id="p-conv">
+          <p class="label">2026</p>
+          <h4>Conveyorku</h4>
+          <p>Web app with an end-to-end browser test suite.</p>
+          <p class="stack">Next.js · Playwright</p>
+        </article>
+        <article id="p-jucita">
+          <p class="label">Aug 2026</p>
+          <h4>Jucita Florist</h4>
+          <p>Website for a florist.</p>
+          <p class="stack">Web</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section class="block" id="research" aria-labelledby="res-h">
+    <div class="wrap">
+      <div class="head">
+        <p class="label">Research · Universitas Brawijaya</p>
+        <h2 id="res-h">Preprint on arXiv</h2>
+      </div>
+      <div class="cases">
+        <article class="case" id="p-paper">
+          <div class="copy">
+            <p class="label">arXiv:2203.11542 · cs.CV · preprint, Mar 2022</p>
+            <h3>Mask-usage recognition with a Vision Transformer</h3>
+            <p>Classifies whether a mask is worn correctly across four classes, trained on MaskedFace-Net's 137.016 images. I compared ViT Base-16, Large-16 and Huge-14 against ResNet, with and without transfer learning from ImageNet-21k and random augmentation.</p>
+            <p>The Grad-CAM maps show what each model looks at: ViT focuses on the mask itself, while ResNet152 drifts to the cheeks and hair.</p>
+            <dl class="meta">
+              <dt>Best model</dt><dd>ViT Huge-14 with transfer learning and augmentation</dd>
+              <dt>Test accuracy</dt><dd>95,3% for ViT Huge-14 vs 55,3% for ResNet-50</dd>
+              <dt>Authors</dt><dd>Hensel D. Jahja (first author), Novanto Yudistira, Sutrisno</dd>
+              <dt>Stack</dt><dd>Vision Transformer · Grad-CAM</dd>
+            </dl>
+            <div class="links">
+              <a href="https://arxiv.org/abs/2203.11542" target="_blank" rel="noopener">arxiv.org/abs/2203.11542 <svg class="ico" aria-hidden="true"><use href="#i-ext"/></svg></a>
+              <a href="https://arxiv.org/pdf/2203.11542v1" target="_blank" rel="noopener">PDF <svg class="ico" aria-hidden="true"><use href="#i-file"/></svg></a>
+            </div>
+          </div>
+          <div class="visual">
+            <div class="duo">
+              <figure class="frame">
+                <div class="bar"><svg class="ico" aria-hidden="true"><use href="#i-file"/></svg><span>arXiv · page 1</span></div>
+                <button class="shot" type="button" data-full="shots/paper-title.webp" data-cap="Title and abstract · arXiv:2203.11542"><img src="shots/paper-title.webp" alt="Paper title page and abstract" width="1180" height="1440" loading="lazy"></button>
+              </figure>
+              <figure class="frame">
+                <div class="bar"><svg class="ico" aria-hidden="true"><use href="#i-file"/></svg><span>Figure 7 · Grad-CAM</span></div>
+                <button class="shot" type="button" data-full="shots/paper-gradcam.webp" data-cap="Figure 7: Grad-CAM of ViT (left) vs ResNet152 (right)"><img src="shots/paper-gradcam.webp" alt="Grad-CAM heatmaps, ViT attends to the mask while ResNet152 attends to the face" width="820" height="1745" loading="lazy"></button>
+              </figure>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section class="block" id="stack" aria-labelledby="stack-h">
+    <div class="wrap">
+      <div class="head">
+        <p class="label">Tools I use in production</p>
+        <h2 id="stack-h">Stack</h2>
+      </div>
+      <div class="stack-grid">
+        <article><p class="label">Backend</p><div class="chips"><span class="tag">Go · chi · sqlc</span><span class="tag">Java 21 · Spring Boot 3</span><span class="tag">PostgreSQL 16</span><span class="tag">Oracle</span><span class="tag">Kafka</span><span class="tag">RabbitMQ</span><span class="tag">Redis</span><span class="tag">OpenID Connect · OAuth 2</span></div></article>
+        <article><p class="label">Frontend</p><div class="chips"><span class="tag">Next.js</span><span class="tag">React 19</span><span class="tag">Vue 3 · Pinia</span><span class="tag">Radix</span><span class="tag">TanStack Query</span><span class="tag">Tailwind</span><span class="tag">MUI</span><span class="tag">Playwright</span></div></article>
+        <article><p class="label">Mobile</p><div class="chips"><span class="tag">Flutter · Dart</span><span class="tag">Anti-root · anti-tamper</span><span class="tag">OCR · liveness</span></div></article>
+        <article><p class="label">Platform</p><div class="chips"><span class="tag">Kubernetes · k3s</span><span class="tag">Alibaba Cloud ACK · OSS</span><span class="tag">Terraform · Ansible</span><span class="tag">Argo CD · Helm</span><span class="tag">Vault</span><span class="tag">Harbor</span><span class="tag">Cloudflare</span></div></article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<section class="close" id="contact" aria-labelledby="contact-h">
+  <div class="wrap">
+    <div>
+      <h2 id="contact-h">Want the details behind any of these?</h2>
+      <p>I'm happy to walk through the architecture, the trade-offs and what I'd do differently.</p>
+      <p class="addr">henseljahja@gmail.com</p>
+    </div>
+    <div class="cta">
+      <button class="btn btn-on-navy" type="button" data-copy="henseljahja@gmail.com"><svg class="ico" aria-hidden="true"><use href="#i-copy"/></svg><span>Copy email</span></button>
+      <a class="btn btn-ghost-navy" href="https://github.com/henseljahja" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-gh"/></svg>GitHub</a>
+    </div>
+  </div>
+</section>
+<footer><div class="wrap"><span>Hensel Jahja · Jakarta</span><span>Set in the Straventa design system</span></div></footer>
+
+<dialog id="lb" aria-label="Screenshot">
+  <div class="lb">
+    <button class="x" type="button" id="lb-close" aria-label="Close screenshot"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg></button>
+    <img id="lb-img" src="" alt="">
+    <p id="lb-cap"></p>
+  </div>
+</dialog>
+<div class="sr" aria-live="polite" id="live"></div>
+
+<script>
+(function () {
+  // project filter
+  var rows = Array.prototype.slice.call(document.querySelectorAll('#rows tr'));
+  var btns = document.querySelectorAll('.seg button');
+  var range = document.getElementById('range');
+  function count(f) { return rows.filter(function (r) { return f === 'all' || r.dataset.a === f; }).length; }
+  document.querySelectorAll('[data-count]').forEach(function (el) { el.textContent = count(el.dataset.count); });
+  function apply(f) {
+    var n = 0;
+    rows.forEach(function (r) { var show = f === 'all' || r.dataset.a === f; r.hidden = !show; if (show) n++; });
+    btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.f === f)); });
+    range.textContent = 'Showing ' + n + ' of ' + rows.length + ' projects';
+    try { localStorage.setItem('pf-filter', f); } catch (e) {}
+  }
+  btns.forEach(function (b) { b.addEventListener('click', function () { apply(b.dataset.f); }); });
+  var saved = 'all';
+  try { saved = localStorage.getItem('pf-filter') || 'all'; } catch (e) {}
+  apply(document.querySelector('.seg button[data-f="' + saved + '"]') ? saved : 'all');
+
+  // copy email
+  var live = document.getElementById('live');
+  document.querySelectorAll('[data-copy]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var text = b.dataset.copy, label = b.querySelector('span');
+      function done(msg) { live.textContent = msg; if (label) { var old = label.textContent; label.textContent = msg; setTimeout(function () { label.textContent = old; }, 1800); } }
+      function fallback() {
+        var el = document.querySelector('.addr');
+        if (el) { var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); el.scrollIntoView({ block: 'center' }); }
+        done('Selected, press copy');
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { done('Email copied'); }, fallback);
+      } else { fallback(); }
+    });
+  });
+
+  // lightbox
+  var dlg = document.getElementById('lb'), img = document.getElementById('lb-img'), cap = document.getElementById('lb-cap'), opener = null;
+  document.querySelectorAll('.shot').forEach(function (b) {
+    b.setAttribute('aria-label', 'Enlarge: ' + b.dataset.cap);
+    b.addEventListener('click', function () {
+      opener = b; img.src = b.dataset.full; img.alt = b.dataset.cap; cap.textContent = b.dataset.cap;
+      if (dlg.showModal) dlg.showModal(); else dlg.setAttribute('open', '');
+    });
+  });
+  function close() { if (dlg.close) dlg.close(); else dlg.removeAttribute('open'); }
+  document.getElementById('lb-close').addEventListener('click', close);
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) close(); });
+  dlg.addEventListener('close', function () { if (opener) opener.focus(); });
+})();
+</script>
